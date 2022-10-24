@@ -10,17 +10,15 @@ output:
       collapsed: false
 ---
 
-<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
-
 ## Introduction
 
-This paper reports 4 experiments that explore realistic threat as a psychological mechanism that can explain how people can have positive stereotypical beliefs toward Asian Americans, yet express negative attitudes and emotions toward them. Although Asian Americans are typically perceived as a “model minority” that does well educationally and economically, negative attitudes and emotions may arise from these positive stereotypes because of the belief that Asian Americans pose a realistic threat to other groups' success and/or status. Study 2, in particular, demonstrated that the model minority stereotype predicted negative attitudes towards Asian Americans. It also found that realistic threat is a concrete mechanism through which positive stereotypes can be translated into negative attitudes and emotions towards Asian Americans. These are the findings that I aim to replicate. 
+This paper reports 4 experiments that explore realistic threat as a psychological mechanism that can explain how people can have positive stereotypical beliefs toward Asian Americans, yet express negative attitudes and emotions toward them. Although Asian Americans are typically perceived as a “model minority” that does well educationally and economically, negative attitudes and emotions may arise from these positive stereotypes because of the belief that Asian Americans pose a realistic threat to other groups' success and/or status. Study 3, in particular, demonstrated that inducing realistic threat caused negative attitudes and affect toward Asian Americans. These are the findings that I aim to replicate. 
 
 ### Justification
-My research area of interest is stereotypes and bias. I am particularly interested in racial stereotypes and their relation to prejudice. However, despite this, I have not yet gotten the opportunity to study Asian American stereotypes. As a result, I hope to use the skills I've developed through previous work I've done on projects involving Black stereotypes and prejudice and apply them to research centered on another racial group. I chose to replicate this work even though it is outside of the 2019-2022 volumes of Psychological Science because it is not only relevant to my research interests, it would also allow me to build on my existing skills. In addition, I recognize that Asian Americans remain a relatively understudied group. Their struggles are often hidden or minimized by seemingly positive stereotypes created by the model minority myth, which is why I believe it is important to attempt to replicate a study revealing the negative effects of being perceived as a model minority. 
+My research area of interest is stereotypes and bias. I am particularly interested in racial stereotypes and their relation to prejudice. However, despite this, I have not yet gotten the opportunity to study Asian American stereotypes. As a result, I hope to use the skills I've developed through previous work I've done on projects involving Black stereotypes and prejudice and apply them to research centered on another racial group. I chose to replicate this work even though it is outside of the 2019-2022 volumes of Psychological Science because it is not only relevant to my research interests, it would also allow me to build on my existing skills. In addition, I recognize that Asian Americans remain a relatively understudied group in social psychology. Their struggles are often hidden or minimized by seemingly positive stereotypes created by the model minority myth, which is why I believe it is important to attempt to replicate a study revealing the negative effects of being perceived as a model minority. 
 
-### Stimuli, Procedures, and Challenges
-Non-Asian participants will be recruited using Prolific. There is only one condition, so all participants will take the same survey on Qualtrics. The survey will prompt participants to answer a series of questions about Asian Americans, including items assessing negative and positive stereotypes, negative and positive emotions, attitude, and realistic threat. Participants will respond to each item using a Likert scale. The number of points on the scale differ depending on what is being measured; for example, the stereotype items utilize a 5-point scale ranging from 1 (not at all typical) to 5 (extremely typical). I expect that it will take each participant a maximum of 10 minutes to complete the survey. A challenge I believe I may encounter is the social desirability bias. The original study was conducted in 2008, but there has been a strong emphasis on the importance of using inclusive and non-offensive language in recent years, so perhaps participants now would be more likely to over report more desirable answers. Another potential challenge is that the data quality of the data collected from Prolific may be poorer than the data collected in-person in the original paper in terms of honesty or attention, but I can implement attention checks to mitigate this. 
+### Challenges
+A challenge I may encounter is the social desirability bias. The original study was conducted in 2008, but given recent strides in social justice movements and initiatives, perhaps participants now would be more likely to over-report more desirable answers. Another potential challenge is that the data quality from Prolific may be poorer than the data collected in-person in the original paper in terms of honesty or attention, but I will implement attention checks to mitigate this. 
 
 ### Important Links
 View the Github repository: [Project Repo](https://github.com/psych251/maddux2008){target="_blank"}
@@ -32,29 +30,39 @@ View the original paper: [Maddux et al., 2008](https://github.com/psych251/maddu
 
 ### Power Analysis
 
-Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
+Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size. Considerations of feasibility for selecting planned sample size.
+```{r}
+
+library(effectsize)
+library(pwr)
+pwr.t.test(n= NULL, d = 0.5, sig.level = 0.05, power = 0.8, type = "two.sample", alternative = "two.sided")
+
+```
 
 ### Planned Sample
 
-Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+The planned sample is 50 participants recruited online from Prolific. To mirror the sample of the original study, Prolific screeners will be used to ensure that only White or Caucasian individuals living in the U.S. take the survey. In addition, the vignette used in the manipulation is centered around a classroom-based scenario. If possible, I would also like to use screeners to only recruit participants who are under the age of 25 and currently taking classes in order to get the sample to be as close as possible to the original, which was undergraduate university students. 
 
 ### Materials
 
-All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+This study will utilize a Qualtrics survey that is expected to take each participant a maximum of 15 minutes to complete. The survey can be viewed at [this link](https://stanforduniversity.qualtrics.com/jfe/form/SV_9ErYeyIoqaKw08C){target="_blank"}. (I'm not done with the survey yet, but this is what I have so far!)
 
 ### Procedure	
+"Participants were told they would be participating in a series of unrelated experiments. The first experiment involved the experimental manipulation of realistic threat, which was followed by a filler task, and then an assessment of global attitudes and emotions toward Asian Americans. In the first phase of the experiment, participants were instructed to read a scenario and told that they would be answering questions about it later. The hypothetical scenario involved a project in a chemistry class, a class consistent with the stereotype of Asian Americans doing well in science classes (e.g., Kao, 2000). In addition, the class demographics were explicitly presented as being predominantly Asian American. Two experimental conditions were created, and participants were randomly assigned to one of two conditions. The instructions read as follows: You are assigned a project in your Chemistry class. Your professor has said the project will be very challenging. The class is graded on a curve, so you are competing against the rest of the class. The class is composed of 62% Asian-American, 29% Euro-American, 5% African-American, and 4% Hispanic American students. The project is worth a significant portion of your grade, so it may determine what you get in the class. Your professor then divides your class into pairs, and you are placed with a student named ____. You and ____ will receive a single grade based on your combined performance. Please take a moment and think about how you think you will do on the project.” In the no realistic threat condition, participants were told they were to be assigned to a partner named Yoshi, a stereotypically Asian American name. In this condition, realistic threat was expected to be absent because the Asian American partner should be seen as an advantage in achieving a good grade. In the realistic threat condition, participants were told they would be assigned to a partner named Jamal, a name that implies an African American individual (e.g., Greenwald, McGhee, & Schwartz, 1998). Because African Americans are a group that, based on the predominant cultural stereotype, does more poorly in academics than Asian Americans (e.g., Devine & Elliot, 1995), this condition was intended to make participants feel that having such a partner would make it difficult to achieve a good grade on the project in a predominantly Asian American class (and in a subject that is consistent with the stereotype of Asian Americans being good in science); in other words, it was intended to induce a sense of realistic threat from Asian Americans. A subsequent question assessed the extent to which participants thought their partner would either help or hurt their performance. This served as our manipulation check of realistic threat. Responses were provided on a 7-point bipolar scale ranging from 1 (hurt performance a lot) to 7 (help performance a lot), with 4 as the neutral point. Following the scenario and the manipulation check, participants were then instructed to turn to the next experiment.
 
-Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+Following the experimental manipulation of realistic threat, participants were told the next task was an unrelated experiment on verbal ability. Participants were asked to unscramble 10 sentences containing four words each that were designed to be neutral and innocuous in content (i.e., “Mark walked to work”). This task was designed to disguise the fact that the experimental manipulation of realistic threat and the subsequent items assessing attitudes and emotions toward Asian Americans were related.
+
+Following the filler task, participants were told that a third experiment concerned perceptions of “groups in society” and that one of the groups we were interested in was Asian Americans. Participants were first to respond to how much, in general, they liked or disliked Asian Americans using a 7-point bipolar scale ranging from 1 (dislike very much) to 7 (like very much), with 4 marked as a neutral point. This item served as our main attitude measure. To measure affect, participants were asked to complete a feeling thermometer, indicating on a scale from 0 to 100 (0 = very cold, 100 = very warm) how warmly or coldly they felt toward Asian Americans. Following these items, participants were debriefed and thanked for their time."
+
+This procedure from the origianl paper was followed precisely. One exception to note, though, is that the paper's materials were not open access, so the filler task items were not available, other than the example given. The other 9 filler items will be created by me, but they will be also be neutral sentences unrelated to the research question. 
 
 ### Analysis Plan
 
-Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
-
-**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+Although the original paper did not discuss data exclusions, to ensure high data quality, I plan to exclude  participants that fail an attention check asking them to recall the name of their partner in the hypothetical scenario. In addition, I aim to exclude participants who do not answer more than 6 questions (over half of the questions in the survey). Finally, I will exclude all data collected from the survey preview on Qualtrics. Following data exclusions and cleaning, I will conduct a one-way ANOVA on the partner performance ratings to determine whether there is a significant difference between the realistic threat and no realistic threat conditions. A one-way ANOVA will also be conducted on the attitude and emotion ratings.    
 
 ###Differences from Original Study
 
-Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
+While the original study was conducted with undergraduate university students, this replication will be recruiting participants online via Prolific, which will likely result in a wider participant age range. This could certainly impact the results, as people of different ages can have very different perspectives and beliefs. However, hopefully with the use of a Prolific age screener, my sample will consist of participants relatively close in age to the participants in the original. The analyses will be the same, with the exception of the data cleaning and exclusion methods detailed above in the Analysis Plan. 
 
 ### Methods Addendum (Post Data Collection)
 
@@ -66,7 +74,6 @@ You can comment this section out prior to final report with data collection.
 #### Differences from pre-data collection methods plan
   Any differences from what was described as the original plan, or “none”.
 
-
 ##Results
 
 
@@ -74,21 +81,36 @@ You can comment this section out prior to final report with data collection.
 
 Data preparation following the analysis plan.
 	
-```{r include=F}
-###Data Preparation
+```{r}
+# Data Preparation
 
-####Load Relevant Libraries and Functions
+# Load Relevant Libraries and Functions
+#library(tidyr)
+#library(dplyr)
+#library(ggplot2)
 
-####Import data
+# Import data
+#data <- read.csv("maddux2008 replication data.csv", header=TRUE)
 
-#### Data exclusion / filtering
+# Data exclusion / filtering
+# Filter out people who did not answer more than 6 questions
+#filtered_data = d %>% 
+ # filter(rowSums(is.na(data) > 6))
+# add attention check exclusion code
 
-#### Prepare data for analysis - create columns etc.
+# Prepare data for analysis - create columns etc.
+#data_long %>%
+ # pivot_longer(cols=-c("id"),
+  #            names_to='Measurement', 
+   #           values_to='Value')
+# need to create a column/variable for the condition participants are in 
 ```
 
 ### Confirmatory analysis
 
-The analyses as specified in the analysis plan.  
+Participants in the realistic threat condition indicated that their partner (Jamal) would provide
+significantly less help on the project (M = X.XX, SD = X.XX) in comparison to participants in the no realistic
+threat condition (M = X.XX, SD = X.XX), F(X, XX) = X.XX, p = .XXX. In addition,  attitudes toward Asian Americans were significantly more negative in the realistic threat condition (M = X.XX, SD = X.XX) than in the no realistic threat condition (M = X.XX, SD = X.XX), F(X, XX) = X.XX, p = .XXX, η2 = .XXX. Similarly, affect toward Asian Americans was significantly more negative in the realistic threat condition (M = X.XX, SD = X.XX) than in the no realistic threat condition (M = X.XX, SD = X.XX), F(X, XX) = X.XX, p = .XXX, η2 = .XXX.
 
 *Side-by-side graph with original graph is ideal here*
 
@@ -104,4 +126,4 @@ Open the discussion section with a paragraph summarizing the primary result from
 
 ### Commentary
 
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt. None of these need to be long.
