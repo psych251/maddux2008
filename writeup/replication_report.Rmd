@@ -35,17 +35,17 @@ Original effect size, power analysis for samples to achieve 80%, 90%, 95% power 
 
 library(effectsize)
 library(pwr)
-pwr.t.test(n= NULL, d = 0.5, sig.level = 0.05, power = 0.8, type = "two.sample", alternative = "two.sided")
+pwr.t.test(n= NULL, d = 0.5, sig.level = 0.05, power = 0.8, type = "two.sample")
 
 ```
 
 ### Planned Sample
 
-The planned sample is 50 participants recruited online from Prolific. To mirror the sample of the original study, Prolific screeners will be used to ensure that only White or Caucasian individuals living in the U.S. take the survey. In addition, the vignette used in the manipulation is centered around a classroom-based scenario. If possible, I would also like to use screeners to only recruit participants who are under the age of 25 and currently taking classes in order to get the sample to be as close as possible to the original, which was undergraduate university students. 
+The planned sample is 50 participants recruited online from Prolific. To mirror the sample of the original study, Prolific screeners will be used to ensure that only White individuals who are between the ages of 18 and 25, currently a student, and living in the U.S. take the survey.
 
 ### Materials
 
-This study will utilize a Qualtrics survey that is expected to take each participant a maximum of 15 minutes to complete. The survey can be viewed at [this link](https://stanforduniversity.qualtrics.com/jfe/form/SV_9ErYeyIoqaKw08C){target="_blank"}. (I'm not done with the survey yet, but this is what I have so far!)
+This study will utilize a Qualtrics survey that is expected to take each participant a maximum of 15 minutes to complete. The survey can be viewed at [this link](https://stanforduniversity.qualtrics.com/jfe/form/SV_9ErYeyIoqaKw08C){target="_blank"}.
 
 ### Procedure	
 "Participants were told they would be participating in a series of unrelated experiments. The first experiment involved the experimental manipulation of realistic threat, which was followed by a filler task, and then an assessment of global attitudes and emotions toward Asian Americans. In the first phase of the experiment, participants were instructed to read a scenario and told that they would be answering questions about it later. The hypothetical scenario involved a project in a chemistry class, a class consistent with the stereotype of Asian Americans doing well in science classes (e.g., Kao, 2000). In addition, the class demographics were explicitly presented as being predominantly Asian American. Two experimental conditions were created, and participants were randomly assigned to one of two conditions. The instructions read as follows: You are assigned a project in your Chemistry class. Your professor has said the project will be very challenging. The class is graded on a curve, so you are competing against the rest of the class. The class is composed of 62% Asian-American, 29% Euro-American, 5% African-American, and 4% Hispanic American students. The project is worth a significant portion of your grade, so it may determine what you get in the class. Your professor then divides your class into pairs, and you are placed with a student named ____. You and ____ will receive a single grade based on your combined performance. Please take a moment and think about how you think you will do on the project.” In the no realistic threat condition, participants were told they were to be assigned to a partner named Yoshi, a stereotypically Asian American name. In this condition, realistic threat was expected to be absent because the Asian American partner should be seen as an advantage in achieving a good grade. In the realistic threat condition, participants were told they would be assigned to a partner named Jamal, a name that implies an African American individual (e.g., Greenwald, McGhee, & Schwartz, 1998). Because African Americans are a group that, based on the predominant cultural stereotype, does more poorly in academics than Asian Americans (e.g., Devine & Elliot, 1995), this condition was intended to make participants feel that having such a partner would make it difficult to achieve a good grade on the project in a predominantly Asian American class (and in a subject that is consistent with the stereotype of Asian Americans being good in science); in other words, it was intended to induce a sense of realistic threat from Asian Americans. A subsequent question assessed the extent to which participants thought their partner would either help or hurt their performance. This served as our manipulation check of realistic threat. Responses were provided on a 7-point bipolar scale ranging from 1 (hurt performance a lot) to 7 (help performance a lot), with 4 as the neutral point. Following the scenario and the manipulation check, participants were then instructed to turn to the next experiment.
@@ -54,13 +54,13 @@ Following the experimental manipulation of realistic threat, participants were t
 
 Following the filler task, participants were told that a third experiment concerned perceptions of “groups in society” and that one of the groups we were interested in was Asian Americans. Participants were first to respond to how much, in general, they liked or disliked Asian Americans using a 7-point bipolar scale ranging from 1 (dislike very much) to 7 (like very much), with 4 marked as a neutral point. This item served as our main attitude measure. To measure affect, participants were asked to complete a feeling thermometer, indicating on a scale from 0 to 100 (0 = very cold, 100 = very warm) how warmly or coldly they felt toward Asian Americans. Following these items, participants were debriefed and thanked for their time."
 
-This procedure from the origianl paper was followed precisely. One exception to note, though, is that the paper's materials were not open access, so the filler task items were not available, other than the example given. The other 9 filler items will be created by me, but they will be also be neutral sentences unrelated to the research question. 
+This procedure from the original paper was followed precisely. One exception to note, though, is that the paper's materials were not open access, so the filler task items were not available, other than the example given. The other 9 filler items will be created by me, but they will be also be neutral sentences unrelated to the research question. 
 
 ### Analysis Plan
 
 Although the original paper did not discuss data exclusions, to ensure high data quality, I plan to exclude  participants that fail an attention check asking them to recall the name of their partner in the hypothetical scenario. In addition, I aim to exclude participants who do not answer more than 6 questions (over half of the questions in the survey). Finally, I will exclude all data collected from the survey preview on Qualtrics. Following data exclusions and cleaning, I will conduct a one-way ANOVA on the partner performance ratings to determine whether there is a significant difference between the realistic threat and no realistic threat conditions. A one-way ANOVA will also be conducted on the attitude and emotion ratings.    
 
-###Differences from Original Study
+### Differences from Original Study
 
 While the original study was conducted with undergraduate university students, this replication will be recruiting participants online via Prolific, which will likely result in a wider participant age range. This could certainly impact the results, as people of different ages can have very different perspectives and beliefs. However, hopefully with the use of a Prolific age screener, my sample will consist of participants relatively close in age to the participants in the original. The analyses will be the same, with the exception of the data cleaning and exclusion methods detailed above in the Analysis Plan. 
 
@@ -74,7 +74,7 @@ You can comment this section out prior to final report with data collection.
 #### Differences from pre-data collection methods plan
   Any differences from what was described as the original plan, or “none”.
 
-##Results
+## Results
 
 
 ### Data preparation
@@ -85,36 +85,101 @@ Data preparation following the analysis plan.
 # Data Preparation
 
 # Load Relevant Libraries and Functions
-#library(tidyr)
-#library(dplyr)
-#library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(effectsize)
 
 # Import data
-#data <- read.csv("maddux2008 replication data.csv", header=TRUE)
+data <- read.csv("Realistic Threat and Asian Americans Pilot Data.csv", header=TRUE, na.strings=c(""," ","NA"))
+
+# Remove unwanted columns and rows
+data <- data[-c(1:2),] # delete rows 1 and 2
+data <- data[, -c(1:8)] # delete columns 1 through 8
+data <- data[, -c(2:9, 25:27)] # then, delete columns 2 through 9
+data <- data[, -c(2)] # then, delete the new column 2
+# Sorry I know there's a much more efficient way to do this
+
+# Convert from chr to num
+data[3] <- lapply(data[3], as.numeric)
+data[14:16] <- lapply(data[14:16], as.numeric)
+
+# Rename 1 and 2 in condition to no threat and threat
+data$Condition[data$Condition == "1"] <- "No Threat"
+data$Condition[data$Condition == "2"] <- "Threat"
 
 # Data exclusion / filtering
-# Filter out people who did not answer more than 6 questions
-#filtered_data = d %>% 
- # filter(rowSums(is.na(data) > 6))
-# add attention check exclusion code
+# Filter out people who did not answer 7 or more questions (half or more)
+# I keep running into an error with this I can't seem to figure out how to fix it but I will come to office hours for help
+filtered_data = data %>% 
+ filter(rowSums(is.na(data)) < 7)
 
-# Prepare data for analysis - create columns etc.
-#data_long %>%
- # pivot_longer(cols=-c("id"),
-  #            names_to='Measurement', 
-   #           values_to='Value')
-# need to create a column/variable for the condition participants are in 
+
+# Add attention check exclusion code
+# I need help with this because I want to accept all variations of the partner's name, including minor typos/misspellings. Maybe I should just change the attention check to a multiple choice question rather than a text entry to make it easier? Let me know your thoughts. 
+
+```
+
+### Data analysis
+```{r}
+# The original paper did ANOVA instead of t-tests, but honestly I'm kind of confused as to why they did since there are only two samples to compare. I'm also planning on coming to office hours to talk about this, maybe there's something I'm missing, but I struggled to run the ANOVAs because of this, so for this assignment, I ran two sample t-tests instead, if that's okay! I still wanted to have some type of result to show you guys. 
+
+# Two-sample t-test on perceived realistic threat 
+t.test(realisticThreatQ_1 ~ Condition, data=data)
+cohens_d(realisticThreatQ_1 ~ Condition, data=data)
+
+# Two-sample t-test on attitude toward Asian Americans
+t.test(attitude_1 ~ Condition, data=data)
+cohens_d(attitude_1 ~ Condition, data=data)
+
+# Bar graph for attitude
+data %>%
+  group_by(Condition) %>%
+  summarise(M = mean(attitude_1), SD = sd(attitude_1), count = n()) -> mean_attitude
+
+ggplot(data = mean_attitude, aes(x = Condition, y = M, ymin = M-SD, ymax= M+SD)) +
+  geom_bar(stat = "identity", width = 0.5, fill="grey") +
+  geom_errorbar(width = 0.05) +
+  coord_cartesian(ylim = c(1,7)) +
+  ylab("Mean Attitude") +
+  xlab("Threat Condition") +
+  theme_minimal()
+
+# Two-sample t-test on affect/emotion toward Asian Americans
+t.test(emotion ~ Condition, data=data)
+cohens_d(emotion ~ Condition, data=data)
+
+# Bar graph for affect/emotion
+data %>%
+  group_by(Condition) %>%
+  summarise(M = mean(emotion), SD = sd(emotion), count = n()) -> mean_emotion
+
+ggplot(data = mean_emotion, aes(x = Condition, y = M, ymin = M-SD, ymax= M+SD)) +
+  geom_bar(stat = "identity", width = 0.5, fill="grey") +
+  geom_errorbar(width = 0.05) +
+  coord_cartesian(ylim = c(0,10)) +
+  ylab("Mean Affect") +
+  xlab("Threat Condition") +
+  theme_minimal()
+
 ```
 
 ### Confirmatory analysis
 
 Participants in the realistic threat condition indicated that their partner (Jamal) would provide
-significantly less help on the project (M = X.XX, SD = X.XX) in comparison to participants in the no realistic
-threat condition (M = X.XX, SD = X.XX), F(X, XX) = X.XX, p = .XXX. In addition,  attitudes toward Asian Americans were significantly more negative in the realistic threat condition (M = X.XX, SD = X.XX) than in the no realistic threat condition (M = X.XX, SD = X.XX), F(X, XX) = X.XX, p = .XXX, η2 = .XXX. Similarly, affect toward Asian Americans was significantly more negative in the realistic threat condition (M = X.XX, SD = X.XX) than in the no realistic threat condition (M = X.XX, SD = X.XX), F(X, XX) = X.XX, p = .XXX, η2 = .XXX.
+significantly less help on the project (*M* = 2.2, *SD* = 0.84) in comparison to participants in the no realistic
+threat condition (*M* = 6.2, *SD* = 0.45), *t*(6) = 9.43, *p* < .001, 95% CI [2.82, 9.06], *d* = 5.96. In addition,  attitudes toward Asian Americans were significantly more negative in the realistic threat condition (*M* = 3, *SD* = 0) than in the no realistic threat condition (*M* = 6, *SD* = 0.707), *t*(4) = 9.45, *p* < .001, 95% CI [2.84, 9.11], *d* = 6.00. Similarly, affect toward Asian Americans was significantly more negative in the realistic threat condition (*M* = 3.6, *SD* = 0.55) than in the no realistic threat condition (*M* = 7.8, *SD* = 0.84), *t*(7) = 9.45, *p* < .001, 95% CI [2.81, 9.03], *d* = 5.94. 
 
-*Side-by-side graph with original graph is ideal here*
+![](/Users/catherineqing/Desktop/maddux2008/writeup/og_attitude_plot.png) ![](/Users/catherineqing/Desktop/maddux2008/writeup/rep_attitude_plot.png)
 
-###Exploratory analyses
+The bar graph on the top shows the attitude results from the original study. The bar graph on the bottom shows the results from the replication study. 
+
+![](/Users/catherineqing/Desktop/maddux2008/writeup/og_affect_plot.png) ![](/Users/catherineqing/Desktop/maddux2008/writeup/rep_affect_plot.png)
+
+The bar graph on the top shows the affect results from the original study. The bar graph on the bottom shows the results from the replication study. Note that although emotion was assessed on a 0 degree to 100 degree scale, the responses for emotion were coded in Qualtrics as values from 0 to 10 in the replication. I will recode these values for pilot B and the actual study. 
+
+
+### Exploratory analyses
 
 Any follow-up analyses desired (not required).  
 
