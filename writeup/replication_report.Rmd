@@ -11,7 +11,6 @@ output:
 ---
 
 ## Introduction
-
 This paper reports 4 experiments that explore realistic threat as a psychological mechanism that can explain how people can have positive stereotypical beliefs toward Asian Americans, yet express negative attitudes and emotions toward them. Although Asian Americans are typically perceived as a “model minority” that is educationally and economically successful, negative attitudes and emotions may arise from these positive stereotypes because of the belief that Asian Americans pose a realistic threat to other groups' success and/or status. I am replicating Study 3, in particular, which demonstrated that experimentally inducing realistic threat caused negative attitude and affect toward Asian Americans. 
 
 ### Justification
@@ -25,7 +24,6 @@ View the original paper: [Maddux et al., 2008](https://github.com/psych251/maddu
 ## Methods
 
 ### Power Analysis
-
 The original study did not report effect size, so I utilized G\*Power to conduct a power analysis for a one-way ANOVA. This power analysis indicated that I would need a sample size of 54 participants to detect an effect size of 0.5. However, as shown below, I also conducted a power analysis for 80% power for a two-sample t-test (which should be the same) to detect an effect size of 0.5, but this power analysis suggested 64 participants for each condition. 
 ```{r}
 library(effectsize)
@@ -35,11 +33,9 @@ pwr.t.test(n= NULL, d = 0.5, sig.level = 0.05, power = 0.8, type = "two.sample")
 ```
 
 ### Planned Sample
-
 For funding reasons, I decided to aim for a number in between the two aforementioned power analysis results, while also being a bit conservative in order to account for potential exclusions. As a result, the planned sample is 80 participants recruited online from Prolific. To mirror the sample of the original study, Prolific screeners will be used to ensure that participants are White individuals who are: between the ages of 18 and 2, currently a student, and living in the U.S.
 
 ### Materials
-
 The original experiment did not specify if data was collected online or in-person, as well as the platform on which the data was collected. This replication will utilize a Qualtrics survey that is expected to take each participant a maximum of 5 minutes to complete. The survey can be viewed at [this link](https://stanforduniversity.qualtrics.com/jfe/form/SV_9ErYeyIoqaKw08C){target="_blank"}.
 
 ### Procedure	
@@ -50,11 +46,9 @@ Procedure was exactly the same as in the original experiment. The procedure desc
 This procedure was followed precisely. One exception to note, though, is that the paper's materials were not open access, and the author did not respond to my email requesting the materials. As a result, the filler task items, other than the example provided in the paper, were created by me. These filler items were also neutral sentences unrelated to the research question that matched the verb tense and word count of the one known item. 
 
 ### Analysis Plan
-
 Although the original paper did not discuss data exclusions, to ensure high data quality, I plan to exclude participants that fail an attention check asking them to recall the name of their partner from the hypothetical scenario they read. In addition, I aim to exclude participants who do not answer more than 7 questions (over half of the questions in the survey). Following data exclusions and cleaning, I will conduct a one-way ANOVA on the affect ratings to determine whether there is a significant difference between ratings in the realistic threat condition and the no realistic threat condition.   
 
 ### Differences from Original Study
-
 While the original study was conducted with undergraduate university students, this replication will recruit participants online via Prolific. This could certainly impact the results, as there could be individual differences in perspectives and beliefs. However, with the use of Prolific screeners, my sample will consist of participants of the same age race and age as the participants in the original. The analyses will be the same, with the exception of the data cleaning and exclusion methods detailed above in the Analysis Plan. 
 
 ### Methods Addendum (Post Data Collection)
@@ -68,7 +62,6 @@ None.
 ## Results
 
 ### Data preparation
-
 Data preparation following the analysis plan.
 	
 ```{r}
@@ -129,10 +122,9 @@ ggplot(data = mean_affect, aes(x=Condition, y=M, ymin=M-ci_affect, ymax= M+ci_af
 ```
 
 ### Confirmatory analysis
-
 Affect toward Asian Americans was significantly more negative in the realistic threat condition (partner: Jamal, *M* = 71.2, *SD* = 17.4) than in the no realistic threat condition (partner: Yoshi, *M* = 79.9, *SD* = 17.5), *F*(1, 76) = 4.779, *p* = .032, η2 = .060. 
 
-The bar graph on the top (Figure 4 in the paper) shows the results from the original study. The bar graph on the bottom shows the results from my replication study.
+The bar graph on the top (Figure 4 in the paper) shows the results from the original study. Note that the y-axis is truncated on this graph, so it does not display the full 0 to 100 scale. The bar graph on the bottom shows the results from my replication study.
 
 ```{r setup, include=FALSE}
 library(knitr)
@@ -146,17 +138,23 @@ include_graphics(c("og_affect_plot.png", "rep_affect_plot.png"))
 ```
 
 ### Exploratory analyses
+The original study also found that attitude toward Asian Americans was more negative in the realistic threat condition. Although this was not the key finding I chose to replicate, I wanted to see if this finding was consistent in my replication.
 
-None. 
+```{r}
+# One way ANOVA on attitude toward Asian Americans
+attitude_anova <- aov(attitude ~ Condition, data = filtered_data)
+summary(attitude_anova)
+etaSquared(attitude_anova)
+```
+
+It appears that in my replication, there was no significant difference in attitude toward Asian Americans between the two conditions, *F*(1, 76) = 1.564, *p* = .215, η2 = .020. 
 
 ## Discussion
 
 ### Summary of Replication Attempt
-
 The original study reported a significant difference in affect ratings between the two conditions, such that affect toward Asian Americans was significantly more negative in the realistic threat condition (partner: Jamal, *M* = 62.11, *SD* = 22.91) than in the no realistic threat condition (partner: Yoshi, *M* = 78.57, *SD* = 17.90), *F*(1, 39) = 6.48, *p* = .015, η2 = .015.
 
-I was able to fully replicate the significance of this difference, but the finding is not as robust as the original, as reflected in the weaker evidence shownn in the *p* values and *F* values. The figure I produced from the replication also looks qualitatively similar to the original, but the original did not provide error bars or discuss standard error of the mean or confidence intervals, so I'm not entirely sure how similar the figures are in terms of variability.
+I was able to fully replicate the significance of this difference, but the finding is not as robust as the original, as reflected in the weaker evidence shown in the *p* values and *F* values. The figure I produced from the replication also looks qualitatively similar to the original, but the original did not provide error bars or discuss standard error of the mean or confidence intervals, so I'm not entirely sure how similar the figures are in terms of data variability.
 
 ### Commentary
-
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt. None of these need to be long.
+Interestingly, even though I was able to replicate the original study's finding regarding affect, my exploratory analysis did not find that attitude was more negative toward Asian Americans when realistic threat was induced. My replication indicates that inducing realistic threat influences emotion, but not attitudes, towards Asian Americans. I'm not certain what possible reasons for this could be, but the original study was published in 2008, so perhaps attitudes towards Asian Americans have shifted to be more positive overall since then. With the use of Prolific screeners, my sample was demographically very similar to the original study sample, so I believe that demographic differences would be an unlikely reason. One challenge that arose was the lack of open source materials, as well as exclusion criteria and attention checks not being discussed in the paper. These things made replication a bit difficult, but I ended up not having to exclude many participants, which is great. I also wish that the original authors included error bars in their figures, as that would have been helpful for comparing my results to theirs. 
